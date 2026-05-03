@@ -1462,3 +1462,57 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+/*--------------------------------------------------------------
+# Cybersecurity portfolio layout helpers
+--------------------------------------------------------------*/
+.portfolio-pillar {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 1.75rem;
+  height: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.portfolio-pillar h4 {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+.portfolio-pillar ul {
+  padding-left: 1.15rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+}
+
+.case-teaser-card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.case-teaser-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-teaser-card .impact {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 18%);
+  margin-bottom: 1rem;
+}
+
+.cta-strip {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.cta-strip p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
