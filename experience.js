@@ -108,7 +108,7 @@
       var aroundYears = Math.max(1, Math.round(totalMonths / 12));
       wrap.className = 'stat-item stat-total-precise';
       wrap.innerHTML =
-        '<span class="stat-number" style="font-size:1.25rem;color:#8B949E;font-weight:500;letter-spacing:0">Around ' + aroundYears + ' yr</span>' +
+        '<span class="stat-number" style="font-size:1.25rem;color:#8B949E;font-weight:500;letter-spacing:0">+' + aroundYears + ' yr</span>' +
         '<span class="stat-label">Total Professional Experience</span>';
       heroStats.appendChild(wrap);
     }
