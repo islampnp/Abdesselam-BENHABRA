@@ -12,7 +12,7 @@ Project Manager with 4+ years delivering complex programs across cybersecurity, 
 
 ### By the numbers
 
-- **4+** years managing cross-functional programs
+- **4** years managing cross-functional programs (auto-calculated from timeline dates)
 - **8,000+** individuals impacted through program delivery
 - **3** professional certifications (CSM, LSSWBPC, Salesforce)
 - **4** sectors: government, pharma, humanitarian, construction
@@ -26,7 +26,7 @@ Project Manager with 4+ years delivering complex programs across cybersecurity, 
 |---------|---------|
 | Hero | Typing title, stat counters (4yr XP, 8K+ impacted, 3 certs), two CTAs |
 | About | Bio paragraph + 4 strength badges (delivery, stakeholders, multi-sector, operational excellence) |
-| Experience | Alternating vertical timeline — 4 roles from WFP to Realistic Security |
+| Experience | Alternating vertical timeline — 4 roles from WFP to Realistic Security, with auto-calculated duration badges and total years |
 | Certifications | 3-card grid (CSM, Lean Six Sigma, Salesforce) with issuer, year, verify link |
 | Skills | 4 grouped blocks — Methodologies, Tools, Technical, Soft Skills |
 | Education & Training | 2-column grid — ESI Master's degree + PMP, ITIL, Trailhead |

@@ -75,7 +75,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 /* About */
 #about{background:var(--navy-light)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start}
-.about-avatar{width:clamp(160px,18vw,240px);height:clamp(160px,18vw,240px);border-radius:50%;background:var(--navy-border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--cyan);border:2px solid var(--cyan-dim);flex-shrink:0;margin-bottom:20px}
+.about-avatar{width:clamp(160px,18vw,240px);height:clamp(160px,18vw,240px);border-radius:50%;overflow:hidden;flex-shrink:0;margin-bottom:20px;border:2px solid var(--cyan-dim)}
+.about-avatar img{width:100%;height:100%;object-fit:cover}
 .about-left{display:flex;flex-direction:column;align-items:flex-start}
 .about-left p{color:var(--text-muted);font-size:0.9375rem;line-height:1.75}
 .about-left strong{color:var(--text)}
@@ -105,7 +106,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .timeline-content:hover{border-color:var(--cyan-dim)}
 .timeline-item:nth-child(odd) .timeline-content{margin-right:auto}
 .timeline-item:nth-child(even) .timeline-content{margin-left:auto}
-.timeline-date{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--cyan);margin-bottom:6px;letter-spacing:0.02em}
+.timeline-date{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--cyan);margin-bottom:6px;letter-spacing:0.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.timeline-duration{font-family:'Inter',sans-serif;font-size:0.6875rem;color:var(--text-muted);background:var(--cyan-dim);padding:2px 8px;border-radius:4px;letter-spacing:0;font-weight:500}
 .timeline-role{font-size:1.05rem;margin-bottom:2px}
 .timeline-company{font-size:0.875rem;color:var(--text-muted);margin-bottom:12px}
 .timeline-bullets{list-style:none;padding:0}
@@ -185,6 +187,17 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
 .footer-text{font-size:0.8125rem;color:var(--text-muted)}
 .footer-built{font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:var(--text-dim);letter-spacing:0.02em}
 
+/* Clients */
+#clients{background:var(--navy)}
+.clients-grid{display:flex;flex-wrap:nowrap;gap:12px;overflow-x:auto;padding:8px 4px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--cyan-dim) transparent}
+.clients-grid::-webkit-scrollbar{height:4px}
+.clients-grid::-webkit-scrollbar-track{background:transparent}
+.clients-grid::-webkit-scrollbar-thumb{background:var(--cyan-dim);border-radius:4px}
+.client-card{background:var(--navy-light);border:1px solid var(--navy-border);border-radius:var(--radius);padding:16px 24px;display:flex;align-items:center;justify-content:center;text-align:center;flex-shrink:0;transition:border-color 0.3s ease,transform 0.3s ease;min-height:56px}
+.client-card:hover{border-color:#00D4FF;transform:translateY(-2px)}
+.client-name{font-size:0.875rem;font-weight:500;color:var(--text);line-height:1.3;white-space:nowrap}
+.clients-footer{max-width:560px;margin:32px auto 0;text-align:center;font-size:0.75rem;color:var(--text-dim);line-height:1.6}
+
 /* Scroll to top */
 #scroll-top{position:fixed;bottom:24px;right:24px;z-index:900;width:40px;height:40px;border-radius:50%;background:var(--cyan);color:var(--navy);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;opacity:0;pointer-events:none;transition:opacity var(--transition),transform var(--transition)}
 #scroll-top.visible{opacity:1;pointer-events:auto}
@@ -216,6 +229,7 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#clients">Clients</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -245,12 +259,24 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
       </div>
       <div class="hero-stats">
         <div class="stat-item">
-          <span class="stat-number" data-count="4">0</span>
-          <span class="stat-label">Years Experience</span>
+          <span class="stat-number" data-count="50">0</span>
+          <span class="stat-label">Projects Managed</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number" data-count="8000">0</span>
+          <span class="stat-number" data-count="10000">0</span>
           <span class="stat-label">People Impacted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="30">0</span>
+          <span class="stat-label">Systems Implemented</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="3">0</span>
+          <span class="stat-label">Multinational Companies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="1">0</span>
+          <span class="stat-label">Startup / Private Company</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" data-count="3">0</span>
@@ -268,7 +294,7 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
       </div>
       <div class="about-grid">
         <div class="about-left reveal">
-          <div class="about-avatar" aria-hidden="true">AB</div>
+          <div class="about-avatar" aria-hidden="true"><img src="profile.jpg" alt="Abdesselam BENHABRA"></div>
           <p>
             I'm <strong>Abdesselam BENHABRA</strong>, a Project Manager based in Tiaret, Algeria. I drive end-to-end delivery of complex programs&mdash;from cybersecurity engagements and IT infrastructure to platform launches and digital transformation.
           </p>
@@ -309,10 +335,10 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
         <h2>Experience</h2>
       </div>
       <div class="timeline">
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-start="2025-10" data-end="present">
           <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Oct 2025 &ndash; Present</div>
+            <div class="timeline-date">Oct 2025 &ndash; Present <span class="timeline-duration"></span></div>
             <h3 class="timeline-role">Cybersecurity Project Manager</h3>
             <div class="timeline-company">Realistic Security &mdash; Algeria</div>
             <ul class="timeline-bullets">
@@ -324,10 +350,10 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
             </ul>
           </div>
         </div>
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-start="2024-03" data-end="2025-09">
           <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Mar 2024 &ndash; Sep 2025</div>
+            <div class="timeline-date">Mar 2024 &ndash; Sep 2025 <span class="timeline-duration"></span></div>
             <h3 class="timeline-role">Information Technologies Manager</h3>
             <div class="timeline-company">Condotte 1880 &mdash; M&eacute;d&eacute;e, Algeria (Italian Multinational)</div>
             <ul class="timeline-bullets">
@@ -337,10 +363,10 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
             </ul>
           </div>
         </div>
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-start="2022-09" data-end="2024-03">
           <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Sep 2022 &ndash; Mar 2024</div>
+            <div class="timeline-date">Sep 2022 &ndash; Mar 2024 <span class="timeline-duration"></span></div>
             <h3 class="timeline-role">ITS Sales Force Leader</h3>
             <div class="timeline-company">SANOFI &mdash; Hydra, Algeria (French Multinational, Outsourcing)</div>
             <ul class="timeline-bullets">
@@ -352,10 +378,10 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
             </ul>
           </div>
         </div>
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-start="2021-03" data-end="2022-02">
           <div class="timeline-dot" aria-hidden="true"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Mar 2021 &ndash; Feb 2022</div>
+            <div class="timeline-date">Mar 2021 &ndash; Feb 2022 <span class="timeline-duration"></span></div>
             <h3 class="timeline-role">IT Operations Assistant</h3>
             <div class="timeline-company">UN World Food Programme &mdash; Tindouf, Algeria</div>
             <ul class="timeline-bullets">
@@ -369,6 +395,83 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
       </div>
     </div>
   </section>
+
+  <!-- CLIENTS SECTION START -->
+  <section id="clients" class="section" aria-label="Clients and projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Trusted by</h2>
+        <p style="font-size:clamp(0.875rem,1.4vw,1rem);color:var(--text-muted);max-width:600px;margin:12px auto 0;line-height:1.6">Organizations I've delivered projects for</p>
+      </div>
+      <div class="clients-grid">
+        <article class="client-card">
+          <div class="client-name">Cevital</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Cacobatph</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Air Alg&eacute;rie</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">GTIM</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">SAPTCO</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Alg&eacute;rie Poste</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">APN</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">ANEM</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">CNR</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Sinopec</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">APCS</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Hydrapharam</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Sompharm</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Biopharm Distribution &ndash; Alger</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">BIOPURE (Biopharm Group)</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">VECOPHARM &ndash; Z&eacute;ralda</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Biopharm Logistic &ndash; Alger</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">BIOCARE &ndash; Alg&eacute;rie</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Portal Tech Replay (UK)</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">RBC (Cairo)</div>
+        </article>
+        <article class="client-card">
+          <div class="client-name">Government &amp; Ministry Clients</div>
+        </article>
+      </div>
+      <p class="clients-footer">Additional engagements with government agencies and ministries are not listed due to confidentiality agreements.</p>
+    </div>
+  </section>
+  <!-- CLIENTS SECTION END -->
 
   <!-- Certifications -->
   <section id="certifications" class="section" aria-label="Professional certifications">
@@ -418,52 +521,93 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
         <div class="skill-group reveal">
           <div class="skill-group-header">
             <i class="ti ti-tools" aria-hidden="true"></i>
-            <h3>Methodologies</h3>
+            <h3>Ways of Working</h3>
           </div>
           <div class="skill-tags">
             <span class="tag">Agile</span>
             <span class="tag">Scrum</span>
             <span class="tag">Kanban</span>
-            <span class="tag">Six Sigma</span>
-            <span class="tag">Lean</span>
+            <span class="tag">Waterfall</span>
+            <span class="tag">Hybrid</span>
+            <span class="tag">Risk Management</span>
+            <span class="tag">Quality Management</span>
+            <span class="tag">Vendor Management</span>
+            <span class="tag">SLA Management</span>
+            <span class="tag">Budgeting &amp; Forecasting</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="ti ti-users" aria-hidden="true"></i>
+            <h3>Power Skills</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Collaborative Leadership</span>
+            <span class="tag">Strategic Thinking</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Negotiation</span>
+            <span class="tag">Conflict Resolution</span>
+            <span class="tag">Emotional Intelligence</span>
+            <span class="tag">Cross-functional Communication</span>
+            <span class="tag">Decision-Making</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="ti ti-chart-bar" aria-hidden="true"></i>
+            <h3>Business Acumen</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Financial Management</span>
+            <span class="tag">Change Management</span>
+            <span class="tag">Governance &amp; Compliance</span>
+            <span class="tag">Benefits Realization</span>
+            <span class="tag">Contract Negotiation</span>
+            <span class="tag">Organizational Strategy</span>
+            <span class="tag">Market Awareness</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="ti ti-server" aria-hidden="true"></i>
+            <h3>Delivery Management</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Resource Management</span>
+            <span class="tag">Capacity Planning</span>
+            <span class="tag">Release Management</span>
+            <span class="tag">Escalation Management</span>
+            <span class="tag">Continuous Improvement</span>
+            <span class="tag">Service Delivery</span>
+            <span class="tag">Operational Excellence</span>
           </div>
         </div>
         <div class="skill-group reveal">
           <div class="skill-group-header">
             <i class="ti ti-apps" aria-hidden="true"></i>
-            <h3>Tools</h3>
+            <h3>Tools &amp; Platforms</h3>
           </div>
           <div class="skill-tags">
             <span class="tag">JIRA</span>
             <span class="tag">Confluence</span>
             <span class="tag">Tableau</span>
             <span class="tag">PowerBI</span>
-            <span class="tag">Google Analytics</span>
+            <span class="tag">Salesforce</span>
+            <span class="tag">ServiceNow</span>
+            <span class="tag">MS Project</span>
           </div>
         </div>
         <div class="skill-group reveal">
           <div class="skill-group-header">
             <i class="ti ti-code" aria-hidden="true"></i>
-            <h3>Technical</h3>
+            <h3>Technical Foundation</h3>
           </div>
           <div class="skill-tags">
             <span class="tag">Python</span>
-            <span class="tag">Django</span>
             <span class="tag">SQL</span>
             <span class="tag">UML</span>
-            <span class="tag">Routing &amp; Switching</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-header">
-            <i class="ti ti-brain" aria-hidden="true"></i>
-            <h3>Soft Skills</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Problem Solving</span>
-            <span class="tag">Information Discovery</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Technical Proficiency</span>
+            <span class="tag">Network Infrastructure</span>
+            <span class="tag">Cybersecurity</span>
           </div>
         </div>
       </div>
@@ -514,13 +658,6 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
           <div>
             <div class="contact-label">Email</div>
             <div class="contact-value">abdesselambenhabra@gmail.com</div>
-          </div>
-        </a>
-        <a href="tel:+213799920204" class="contact-item reveal" aria-label="Call phone">
-          <i class="ti ti-phone" aria-hidden="true"></i>
-          <div>
-            <div class="contact-label">Phone</div>
-            <div class="contact-value">+213 799 920 204</div>
           </div>
         </a>
         <div class="contact-item reveal">
@@ -608,41 +745,6 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
     if(cursorEl) cursorEl.style.display = 'none';
   }
 
-  // Stats counter
-  var counted = false;
-  var statObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting && !counted){
-        counted = true;
-        statObserver.unobserve(e.target);
-        animateStats();
-      }
-    });
-  }, { threshold: 0.3 });
-  var statsSection = document.querySelector('.hero-stats');
-  if(statsSection) statObserver.observe(statsSection);
-  function animateStats(){
-    var targets = document.querySelectorAll('.stat-number[data-count]');
-    if(reduceMotion){
-      targets.forEach(function(el){ el.textContent = el.getAttribute('data-count'); });
-      return;
-    }
-    targets.forEach(function(el){
-      var target = parseInt(el.getAttribute('data-count'), 10);
-      var current = 0;
-      var duration = Math.min(1500, target * 8);
-      var step = Math.max(1, Math.floor(target / 60));
-      var interval = Math.max(16, Math.floor(duration / (target / step)));
-      function tick(){
-        current += step;
-        if(current >= target){ el.textContent = target.toLocaleString(); return; }
-        el.textContent = current.toLocaleString();
-        setTimeout(tick, interval);
-      }
-      tick();
-    });
-  }
-
   // Mobile nav
   var navToggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navLinks');
@@ -709,5 +811,6 @@ footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
   }
 })();
 </script>
+<script src="experience.js"></script>
 </body>
 </html>

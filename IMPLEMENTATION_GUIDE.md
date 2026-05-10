@@ -92,6 +92,7 @@ Single IIFE (Immediately Invoked Function Expression) containing:
 | Typing animation | `setTimeout` loop appending chars to `#typedText` span |
 | Scroll reveals | `IntersectionObserver` adding `.visible` class to `.reveal` elements |
 | Stats counter | `IntersectionObserver` trigger → `setTimeout` loop incrementing `data-count` |
+| Timeline durations | `calcDurations()` parses `data-start`/`data-end` attributes, computes month diffs, displays per-item badges, flattens total years into `.stat-year` |
 | Mobile nav | Toggle `.open` on nav, `.show` on overlay, swap icon class |
 | Smooth scroll | `scrollTo` with offset for fixed nav (64px), `preventDefault` on hash links |
 | Active nav highlight | `scroll` event listening, comparing `offsetTop` against scroll position |
@@ -167,7 +168,7 @@ All content is in `index.html`. Here's where to find each section:
 | Stats numbers | `data-count="4"`, `data-count="8000"`, `data-count="3"` |
 | About bio | `I'm <strong>Abdesselam BENHABRA</strong>` (line ~274) |
 | Strength cards | `class="strength-card"` (x4) |
-| Experience entries | `class="timeline-item"` (x4) |
+| Experience entries | `class="timeline-item"` (x4) — each has `data-start="YYYY-MM"` and `data-end="YYYY-MM"` (or `"present"`) |
 | Certifications | `class="cert-card"` (x3) |
 | Skill groups | `class="skill-group"` (x4) |
 | Education cards | `class="edu-card"` (x4) |
@@ -183,7 +184,7 @@ All content is in `index.html`. Here's where to find each section:
 ```
 
 **Add a timeline entry:**
-Copy a `.timeline-item` block, update the date, role, company, and bullets.
+Copy a `.timeline-item` block, update the date, role, company, and bullets. Set `data-start="YYYY-MM"` and `data-end="YYYY-MM"` (or `data-end="present"` for current role). The duration badge and hero stat total update automatically.
 
 **Change accent color:**
 ```css

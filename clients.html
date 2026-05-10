@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Clients & projects — Abdesselam BENHABRA, Project Manager. Cybersecurity and IT engagements across government, private, finance, energy, telecom, and aviation sectors in Algeria and MENA.">
+<title>Clients & Projects — Abdesselam BENHABRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0D1117;--navy-light:#161B22;--navy-border:#30363D;--cyan:#00D4FF;--cyan-dim:rgba(0,212,255,0.08);--amber:#F59E0B;--amber-dim:rgba(245,158,11,0.1);--text:#E6EDF3;--text-muted:#8B949E;--text-dim:#484F58;--radius:8px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--navy);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+::selection{background:var(--cyan);color:var(--navy)}
+a{color:var(--cyan);text-decoration:none;transition:color var(--transition)}
+a:hover,a:focus{color:#66E5FF}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;line-height:1.25;color:#fff}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{background:rgba(13,17,23,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--navy-border);height:64px;position:sticky;top:0;z-index:100}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.125rem;color:#fff;letter-spacing:-0.02em}
+.nav-logo span{color:var(--cyan)}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:500;color:var(--text-muted);padding:6px 14px;border-radius:var(--radius);transition:color var(--transition),background var(--transition)}
+.nav-back:hover{color:#fff;background:var(--cyan-dim)}
+
+/* Section header */
+.section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+.section-header{text-align:center;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+.section-header h1{font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:8px}
+.section-header h2{display:inline-block;position:relative;font-size:clamp(1.3rem,3vw,1.75rem)}
+.section-header h2::after{content:'';display:block;width:50px;height:3px;background:var(--cyan);margin:10px auto 0;border-radius:2px}
+.section-sub{font-size:clamp(0.875rem,1.4vw,1rem);color:var(--text-muted);max-width:600px;margin:12px auto 0;line-height:1.6}
+
+/* Stats bar */
+.clients-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,2vw,24px);margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.stat-pill{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--navy-light);border:1px solid var(--navy-border);border-radius:100px;font-size:0.8125rem}
+.stat-pill-num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--cyan);font-size:1rem}
+.stat-pill-label{color:var(--text-muted)}
+
+/* Filter bar */
+.filter-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.filter-btn{padding:6px 16px;font-family:'Inter',sans-serif;font-size:0.8125rem;font-weight:500;border-radius:100px;border:1px solid var(--navy-border);background:transparent;color:var(--text-muted);cursor:pointer;transition:all var(--transition)}
+.filter-btn:hover{border-color:var(--cyan-dim);color:var(--text)}
+.filter-btn.active{background:var(--cyan-dim);border-color:var(--cyan);color:var(--cyan)}
+
+/* Client grid */
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.clients-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.clients-grid{grid-template-columns:1fr}}
+
+.client-card{background:var(--navy-light);border:1px solid var(--navy-border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;transition:border-color var(--transition),transform var(--transition);opacity:1}
+.client-card.hidden{display:none}
+.client-card:hover{border-color:var(--cyan-dim);transform:translateY(-2px)}
+
+.client-card-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:14px}
+.client-logo{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;flex-shrink:0;overflow:hidden}
+.client-logo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.client-logo-initials{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:50%;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600}
+.client-info{min-width:0;flex:1}
+.client-name{font-size:1rem;font-weight:600;color:#fff;margin-bottom:2px}
+.client-sector{display:inline-flex;align-items:center;gap:4px;font-size:0.6875rem;font-weight:500;padding:2px 10px;border-radius:100px;letter-spacing:0.02em;text-transform:uppercase}
+
+.client-projects{margin-top:auto;padding-top:12px;border-top:1px solid var(--navy-border)}
+.client-project{font-size:0.8125rem;color:var(--text);font-family:'JetBrains Mono',monospace;padding:4px 0;display:flex;align-items:center;gap:6px}
+.client-project-nda{font-size:0.75rem;color:var(--text-dim);display:flex;align-items:center;gap:6px;font-style:italic}
+.client-project .ti{font-size:0.875rem;color:var(--text-dim);flex-shrink:0}
+
+/* Footer note */
+.clients-footer{max-width:640px;margin:clamp(2rem,4vw,3rem) auto 0;text-align:center;font-size:0.8125rem;color:var(--text-dim);line-height:1.6;padding:20px 0;border-top:1px solid var(--navy-border)}
+
+/* Footer */
+footer{background:var(--navy-light);border-top:1px solid var(--navy-border);padding:32px 0;text-align:center}
+footer .container{display:flex;flex-direction:column;align-items:center;gap:8px}
+.footer-name{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#fff}
+.footer-text{font-size:0.8125rem;color:var(--text-muted)}
+.footer-built{font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:var(--text-dim);letter-spacing:0.02em}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+  .client-card{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Sub navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo">AB<span>.</span></a>
+    <a href="index.html" class="nav-back" aria-label="Back to portfolio"><i class="ti ti-arrow-left" aria-hidden="true"></i> Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <section id="clients" class="section" aria-label="Clients and projects">
+    <div class="container">
+      <div class="section-header">
+        <h1>Clients &amp; Projects</h1>
+        <p class="section-sub">Organizations I've delivered cybersecurity engagements for across Algeria and the MENA region.</p>
+      </div>
+
+      <div class="clients-stats" id="clientsStats">
+        <!-- injected by JS -->
+      </div>
+
+      <div class="filter-bar" id="filterBar" role="tablist" aria-label="Filter clients by sector">
+        <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Government">Government</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Private">Private</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Finance">Finance</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Energy">Energy</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Telecom">Telecom</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Aviation">Aviation</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Transport">Transport</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Multinational">Multinational</button>
+      </div>
+
+      <div class="clients-grid" id="clientsGrid">
+        <!-- injected by JS -->
+      </div>
+
+      <p class="clients-footer">This list represents a selection of engagements. Additional clients across government and private sectors are not listed due to confidentiality agreements.</p>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-name">Abdesselam BENHABRA</div>
+    <div class="footer-text">&copy; 2026 Abdesselam Benhabra. All rights reserved.</div>
+    <div class="footer-built">Clients showcase &middot; HTML &middot; CSS &middot; JS</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ------------------------------------------------------------------ */
+  /*  Client data                                                        */
+  /* ------------------------------------------------------------------ */
+
+  var sectorColors = {
+    Government:    '#3B82F6',
+    Private:       '#2DD4BF',
+    Finance:       '#F59E0B',
+    Energy:        '#F97316',
+    Telecom:       '#A855F7',
+    Aviation:      '#00D4FF',
+    Transport:     '#6B7280',
+    Multinational: '#EC4899'
+  };
+
+  var clients = [
+    {
+      name: 'Cevital',
+      sector: 'Private',
+      sectorLabel: 'Private — Agri-food &amp; Industry',
+      initials: 'CV',
+      logo: '',
+      projects: null
+    },
+    {
+      name: 'Cacobatph',
+      sector: 'Government',
+      sectorLabel: 'Public — Construction',
+      initials: 'CC',
+      logo: '',
+      projects: null
+    },
+    {
+      name: 'MT',
+      sector: 'Telecom',
+      sectorLabel: 'Telecom',
+      initials: 'MT',
+      logo: '',
+      projects: null
+    },
+    {
+      name: 'Air Alg&eacute;rie',
+      sector: 'Aviation',
+      sectorLabel: 'Aviation — National Carrier',
+      initials: 'AA',
+      logo: '',
+      projects: ['MetaSploit_Air-algerie_PO2026', 'Air-Alg&eacute;rie-IR']
+    },
+    {
+      name: 'GTIM',
+      sector: 'Private',
+      sectorLabel: 'Industry / Engineering',
+      initials: 'GT',
+      logo: '',
+      projects: ['GTIM-IR']
+    },
+    {
+      name: 'SH TIM',
+      sector: 'Energy',
+      sectorLabel: 'Energy / Industry',
+      initials: 'SH',
+      logo: '',
+      projects: ['SH TIM']
+    },
+    {
+      name: 'BDL',
+      sector: 'Finance',
+      sectorLabel: 'Finance — Public Bank',
+      initials: 'BD',
+      logo: '',
+      projects: ['BDL Optimisation SIEM']
+    },
+    {
+      name: 'SAPTCO',
+      sector: 'Transport',
+      sectorLabel: 'Transport — Saudi Arabia',
+      initials: 'SA',
+      logo: '',
+      projects: ['SAPTCO']
+    },
+    {
+      name: 'Alg&eacute;rie Poste',
+      sector: 'Government',
+      sectorLabel: 'Public — Postal &amp; Financial Services',
+      initials: 'AP',
+      logo: '',
+      projects: ['Alg&eacute;rie_Post-IR']
+    },
+    {
+      name: 'APN',
+      sector: 'Government',
+      sectorLabel: 'Government — Parliament',
+      initials: 'APN',
+      logo: '',
+      projects: ['IR_FortiSIEM_APN']
+    },
+    {
+      name: 'ANEM',
+      sector: 'Government',
+      sectorLabel: 'Government — Employment Agency',
+      initials: 'AN',
+      logo: '',
+      projects: ['ANEM-IR']
+    },
+    {
+      name: 'CNR',
+      sector: 'Government',
+      sectorLabel: 'Government — Social Security',
+      initials: 'CN',
+      logo: '',
+      projects: ['CNR-DLP']
+    },
+    {
+      name: 'Sinopec',
+      sector: 'Multinational',
+      sectorLabel: 'Energy — Chinese Multinational',
+      initials: 'SI',
+      logo: '',
+      projects: null
+    },
+    {
+      name: 'Government Sector Clients',
+      sector: 'Government',
+      sectorLabel: 'Government / Ministries',
+      initials: 'GS',
+      logo: 'shield',
+      projects: null
+    }
+  ];
+
+  /* ------------------------------------------------------------------ */
+  /*  Stats                                                              */
+  /* ------------------------------------------------------------------ */
+
+  function buildStats() {
+    var total = clients.length;
+    var counts = {};
+    clients.forEach(function(c){ counts[c.sector] = (counts[c.sector] || 0) + 1; });
+
+    var order = ['Government','Private','Finance','Energy','Telecom','Aviation','Transport','Multinational'];
+    var html = '';
+
+    html += '<div class="stat-pill"><span class="stat-pill-num">' + total + '</span><span class="stat-pill-label">Total Clients</span></div>';
+
+    order.forEach(function(sector){
+      if (counts[sector]) {
+        var color = sectorColors[sector] || '#8B949E';
+        html += '<div class="stat-pill">' +
+                '<span class="stat-pill-num" style="color:' + color + '">' + counts[sector] + '</span>' +
+                '<span class="stat-pill-label">' + sector + '</span>' +
+                '</div>';
+      }
+    });
+
+    document.getElementById('clientsStats').innerHTML = html;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Card rendering                                                     */
+  /* ------------------------------------------------------------------ */
+
+  function renderCards() {
+    var html = '';
+    clients.forEach(function(c, i){
+      var color = sectorColors[c.sector] || '#8B949E';
+      var logoContent;
+
+      if (c.logo === 'shield') {
+        logoContent = '<div class="client-logo-initials" style="background:' + color + '20;color:' + color + '">' +
+                      '<i class="ti ti-shield" style="font-size:22px"></i>' +
+                      '</div>';
+      } else {
+        logoContent = '<div class="client-logo-initials" style="background:' + color + '20;color:' + color + '">' + c.initials + '</div>';
+      }
+
+      var logoAttr = c.logo && c.logo !== 'shield' ? ' data-logo-src="' + c.logo + '"' : '';
+      logoAttr += ' data-initials="' + c.initials + '"';
+
+      var projectHtml = '';
+      if (c.projects && c.projects.length > 0) {
+        c.projects.forEach(function(p){
+          projectHtml += '<div class="client-project"><i class="ti ti-folder" aria-hidden="true"></i>' + p + '</div>';
+        });
+      } else {
+        projectHtml += '<div class="client-project-nda"><i class="ti ti-lock" aria-hidden="true"></i>Engagement details under NDA</div>';
+      }
+
+      html +=
+        '<article class="client-card" data-sector="' + c.sector + '" role="tabpanel">' +
+          '<div class="client-card-top">' +
+            '<div class="client-logo"' + logoAttr + ' data-sector="' + c.sector + '">' + logoContent + '</div>' +
+            '<div class="client-info">' +
+              '<div class="client-name">' + c.name + '</div>' +
+              '<span class="client-sector" style="background:' + color + '18;color:' + color + '">' + c.sectorLabel + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="client-projects">' + projectHtml + '</div>' +
+        '</article>';
+    });
+
+    document.getElementById('clientsGrid').innerHTML = html;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Logo swap — try loading real image from data-logo-src              */
+  /* ------------------------------------------------------------------ */
+
+  function trySwapLogos() {
+    document.querySelectorAll('.client-logo').forEach(function(el){
+      var src = el.getAttribute('data-logo-src');
+      if (!src) return;
+
+      var img = new Image();
+      img.onload = function(){
+        var initials = el.querySelector('.client-logo-initials');
+        if (initials) initials.style.display = 'none';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '50%';
+        el.appendChild(img);
+      };
+      img.onerror = function(){
+        /* keep initials, do nothing */
+      };
+      img.src = src;
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Filtering                                                          */
+  /* ------------------------------------------------------------------ */
+
+  function initFilter() {
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.client-card');
+
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        var filter = btn.getAttribute('data-filter');
+        cards.forEach(function(card){
+          if (filter === 'all' || card.getAttribute('data-sector') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Bootstrap                                                          */
+  /* ------------------------------------------------------------------ */
+
+  function init() {
+    buildStats();
+    renderCards();
+    trySwapLogos();
+    initFilter();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
