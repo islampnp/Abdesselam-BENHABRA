@@ -172,6 +172,9 @@
           if (el.getAttribute('data-count') === '50') {
             el.textContent = '50+';
           }
+          if (el.getAttribute('data-count') === '30') {
+            el.textContent = '30+';
+          }
         });
       }, 1800);
     }
